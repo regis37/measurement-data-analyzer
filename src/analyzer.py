@@ -39,3 +39,30 @@ def analyze_data(df: pd.DataFrame) -> dict:
               f"mean: {stats[col]['mean']}, std: {stats[col]['std']}")
 
     return stats
+
+def generate_plots(df: pd.DataFrame, output_dir: str) -> None:
+    """
+    Generate and save plots for each measurement column.
+    """
+    # Create output directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
+
+    # We skip the 'timestamp' column
+    measurement_columns = [col for col in df.columns if col != "timestamp"]
+
+    for col in measurement_columns:
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        ax.plot(df["timestamp"], df[col], color="steelblue", linewidth=1.5)
+
+        ax.set_title(f"Measurement: {col}", fontsize=14)
+        ax.set_xlabel("Time (s)")
+        ax.set_ylabel(col)
+        ax.grid(True)
+
+        # Save the plot as a PNG file
+        output_path = os.path.join(output_dir, f"{col}.png")
+        plt.savefig(output_path)
+        plt.close(fig)
+
+        print(f"Plot saved: {output_path}")
