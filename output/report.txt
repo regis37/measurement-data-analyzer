@@ -1,0 +1,30 @@
+==================================================
+   MEASUREMENT DATA ANALYSIS REPORT
+==================================================
+
+[ voltage_V ]
+  Min      : 11.95
+  Max      : 12.15
+  Mean     : 12.047
+  Std Dev  : 0.0611
+
+[ current_A ]
+  Min      : 0.5
+  Max      : 0.55
+  Mean     : 0.526
+  Std Dev  : 0.0157
+
+[ temperature_C ]
+  Min      : 25.3
+  Max      : 29.1
+  Mean     : 27.175
+  Std Dev  : 1.2126
+
+[ power_W ]
+  Min      : 5.98
+  Max      : 6.68
+  Mean     : 6.3375
+  Std Dev  : 0.2208
+
+==================================================
+End of report
