@@ -91,3 +91,43 @@ def export_report(stats: dict, output_dir: str) -> None:
         f.write("End of report\n")
 
     print(f"Report saved: {report_path}")
+
+
+
+def main():
+    """
+    Main entry point — runs the full analysis pipeline.
+    """
+    # Paths
+    data_path  = os.path.join("..", "data", "sample_data.csv")
+    output_dir = os.path.join("..", "output")
+
+    print("=" * 50)
+    print("   MEASUREMENT DATA ANALYZER")
+    print("=" * 50 + "\n")
+
+    # Step 1 : Load data
+    print("[ 1/3 ] Loading data...")
+    df = load_data(data_path)
+    print()
+
+    # Step 2 : Analyze data
+    print("[ 2/3 ] Analyzing data...")
+    stats = analyze_data(df)
+    print()
+
+    # Step 3 : Generate plots and report
+    print("[ 3/3 ] Generating plots and report...")
+    generate_plots(df, output_dir)
+    export_report(stats, output_dir)
+    print()
+
+    print("=" * 50)
+    print("   Analysis complete!")
+    print("=" * 50)
+
+
+# This block runs only when the script is executed directly
+# and not when it is imported as a module
+if __name__ == "__main__":
+    main()
