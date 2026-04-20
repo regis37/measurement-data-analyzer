@@ -1,5 +1,11 @@
 # Measurement Data Analyzer
 
+# Measurement Data Analyzer
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-active-success.svg)
+
 A Python tool for automated analysis and visualization of electrical measurement data.
 Designed to process CSV files exported from measurement devices and generate statistical reports and plots.
 
